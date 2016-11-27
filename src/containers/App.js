@@ -5,10 +5,16 @@ export default class App extends Component {
   render() {
     return (
       <div className='container'>
-        <h1>App</h1>
-        <ul>
-          <li><Link to='/admin'>Админка</Link></li>
-          <li><Link to='/list'>Список жанров</Link></li>
+        <ul className='nav nav-pills'>
+          <li className='nav-item'>
+            <Link to='/admin' className='nav-link'>Админка</Link>
+          </li>
+          <li className='nav-item'>
+            <Link to='/list' className='nav-link'>Список жанров</Link>
+          </li>
+          <li className='nav-item'>
+            <Link to='/login' className='nav-link'>Войти</Link>
+          </li>
         </ul>
         {this.props.children}
       </div>
