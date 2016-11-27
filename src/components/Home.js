@@ -11,6 +11,15 @@ export default class Home extends Component {
     const value = e.target.elements[0].value.toLowerCase()
     this.context.router.push(`/genre/${value}`)
   }
+  componentDidMount() {
+    this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
+  }
+  routerWillLeave() {
+    // let answer = window.confirm('Вы уверены?')
+    // if(!answer)
+    //   return false
+    return 'Вы уверены?'
+  }
   render() {
     return (
       <div className='row'>
