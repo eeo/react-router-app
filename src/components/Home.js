@@ -2,24 +2,24 @@ import React, { Component, PropTypes } from 'react'
 import { browserHistory } from 'react-router'
 
 export default class Home extends Component {
-  constructor() {
-    super();
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-  handleSubmit(e) {
-    e.preventDefault()
-    const value = e.target.elements[0].value.toLowerCase()
-    this.context.router.push(`/genre/${value}`)
-  }
-  componentDidMount() {
-    this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
-  }
-  routerWillLeave() {
-    // let answer = window.confirm('Вы уверены?')
-    // if(!answer)
-    //   return false
-    return 'Вы уверены?'
-  }
+  // constructor() {
+  //   super();
+  //   this.handleSubmit = this.handleSubmit.bind(this)
+  // }
+  // handleSubmit(e) {
+  //   e.preventDefault()
+  //   const value = e.target.elements[0].value.toLowerCase()
+  //   this.context.router.push(`/genre/${value}`)
+  // }
+  // componentDidMount() {
+  //   this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
+  // }
+  // routerWillLeave() {
+  //   // let answer = window.confirm('Вы уверены?')
+  //   // if(!answer)
+  //   //   return false
+  //   return 'Вы уверены?'
+  // }
   render() {
     return (
       <div className='row'>
