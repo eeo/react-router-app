@@ -7,6 +7,7 @@ import NotFound from './components/NotFound'
 import List from './components/List'
 import Release from './components/Release'
 import LoginPage from './containers/LoginPage'
+import requireAuthentication from './containers/AuthenticatedComponent'
 
 import { Route, IndexRoute } from 'react-router'
 
@@ -14,7 +15,7 @@ export const routes = (
   <div>
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
-      <Route path='/admin' component={Admin} onEnter={Admin.onEnter}/>
+      <Route path='/admin' component={requireAuthentication(Admin)}/>
       <Route path='/genre/:genre' component={Genre}>
         <Route path='/genre/:genre/:release' component={Release} />
       </Route>
