@@ -1,4 +1,5 @@
-import {  LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../constants/User'
+import { LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../constants/User'
+import { ROUTING } from '../constants/Routing'
 
 export function login(payload) {
   return (dispatch) => {
@@ -16,6 +17,13 @@ export function login(payload) {
       })
     },2000)
 
+    dispatch({
+      type: ROUTING,
+      payload: {
+        method: 'push',
+        nextUrl: '/admin'
+      }
+    })
   }
 }
 
